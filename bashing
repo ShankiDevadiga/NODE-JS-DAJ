@@ -1,0 +1,11 @@
+# Variables
+IMAGE_NAME=your-dockerhub-username/jenkins-docker-ansible
+
+# Build the Docker image
+docker build -t $IMAGE_NAME .
+
+# Log in to Docker Hub
+echo "$DOCKER_HUB_PASSWORD" | docker login --username $DOCKER_HUB_USERNAME --password-stdin
+
+# Push the Docker image to Docker Hub
+docker push $IMAGE_NAME
