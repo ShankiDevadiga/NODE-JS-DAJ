@@ -1,0 +1,35 @@
+---
+- hosts: webservers
+  become: yes
+
+  tasks:
+    - name: Install Docker
+      apt:
+        name: docker.io
+        state: present
+        update_cache: yes
+
+    - name: Start Docker
+      systemd:
+        name: docker
+        state: started
+        enabled: yes
+
+    - name: Pull Docker image from Docker Hub
+      docker_image:
+        name: your-dockerhub-username/jenkins-docker-ansible
+        source: pull
+
+    - name: Stop and remove any existing container
+      docker_container:
+        name: webapp
+        state: absent
+
+    - name: Run the Docker container
+      docker_container:
+        name: webapp
+        image: your-dockerhub-username/jenkins-docker-ansible
+        state: started
+        restart_policy: always
+        ports:
+          - "80:3000"
