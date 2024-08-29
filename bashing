@@ -1,5 +1,5 @@
 # Variables
-IMAGE_NAME=sujankumar861/NODE-JS-DAJ
+IMAGE_NAME=sujankumar861/node-js-daj
 
 # Build the Docker image
 docker build -t $IMAGE_NAME .
