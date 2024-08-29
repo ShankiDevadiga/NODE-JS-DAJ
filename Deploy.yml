@@ -17,7 +17,7 @@
 
     - name: Pull Docker image from Docker Hub
       docker_image:
-        name: your-dockerhub-username/NODE-JS-DAJ
+        name: sujankumar861/node-js-daj
         source: pull
 
     - name: Stop and remove any existing container
@@ -28,7 +28,7 @@
     - name: Run the Docker container
       docker_container:
         name: webapp
-        image: your-dockerhub-username/NODE-JS-DAJ
+        image: sujankumar861/node-js-daj
         state: started
         restart_policy: always
         ports:
