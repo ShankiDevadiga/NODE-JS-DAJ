@@ -1,5 +1,5 @@
 {
-  "name": "jenkins-docker-ansible",
+  "name": "NODE-JS-DAJ",
   "version": "1.0.0",
   "description": "A simple Node.js app",
   "main": "app.js",
