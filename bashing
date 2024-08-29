@@ -1,5 +1,5 @@
 # Variables
-IMAGE_NAME=your-dockerhub-username/jenkins-docker-ansible
+IMAGE_NAME=sujankumar861/NODE-JS-DAJ
 
 # Build the Docker image
 docker build -t $IMAGE_NAME .
